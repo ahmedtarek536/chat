@@ -1,7 +1,6 @@
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import Button from "./Button";
 
 export default function Catogries() {
   return (
@@ -29,7 +28,7 @@ export default function Catogries() {
         <Box
           title={"Women Clothes"}
           type={"15% off"}
-          des={"pest price"}
+          des={"Best price"}
           img={
             "https://images.unsplash.com/photo-1513094735237-8f2714d57c13?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNob3BwaW5nfGVufDB8fDB8fHww"
           }

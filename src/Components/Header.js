@@ -8,7 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export function Header({ setCartIsOpen, setPage }) {
+export default function Header({ setCartIsOpen, setPage }) {
   return (
     <header>
       <Logo />
@@ -18,7 +18,7 @@ export function Header({ setCartIsOpen, setPage }) {
   );
 }
 
-export function Logo() {
+ function Logo() {
   return (
     <div className="logo">
       <img

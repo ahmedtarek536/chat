@@ -2,7 +2,14 @@ import { useRef, useState } from "react";
 import Button from "./Button";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-export default function ShowProduct({ product, onCloseProduct, onAddToCart }) {
+import SecProducts from "./Products";
+export default function ShowProduct({
+  product,
+  onCloseProduct,
+  onAddToCart,
+  products,
+  onOpenProduct,
+}) {
   function hanldeCloseProduct() {
     onCloseProduct(null);
   }
@@ -10,13 +17,18 @@ export default function ShowProduct({ product, onCloseProduct, onAddToCart }) {
   window.scrollTo(0, 0);
 
   return (
-    <div className="show-product">
-      <Button className="product-back-btn" onClick={hanldeCloseProduct}>
-        <FontAwesomeIcon icon={faArrowLeft} />
-      </Button>
-      <ProductImgs product={product} />
-      <ProdtuctInfo product={product} onAddToCart={onAddToCart} />
-    </div>
+    <>
+      <div className="show-product">
+        <Button className="product-back-btn" onClick={hanldeCloseProduct}>
+          <FontAwesomeIcon icon={faArrowLeft} />
+        </Button>
+        <ProductImgs product={product} />
+        <ProdtuctInfo product={product} onAddToCart={onAddToCart} />
+      </div>
+      {/* <div className="shop">
+        <SecProducts onOpenProduct={onOpenProduct} products={products} />
+      </div> */}
+    </>
   );
 }
 

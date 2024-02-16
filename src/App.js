@@ -1,31 +1,13 @@
 import { Children, useEffect, useRef, useState } from "react";
-import {
-  faArrowLeft,
-  faArrowRight,
-  faCartPlus,
-  faChevronRight,
-  faFilter,
-  faUser,
-  faXmark,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Header, Logo } from "./Header";
-import Catogries from "./Categories";
-import Information from "./Information";
-import ContactUs from "./Contact";
-import Brands from "./Brands";
-import Cart from "./Cart";
-import Footer from "./Footer";
-import Shop from "./Shop";
 
-import {
-  faFacebook,
-  faInstagram,
-  faTelegram,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
-import Button from "./Button";
-import { clear } from "@testing-library/user-event/dist/clear";
+import Header from "./Components/Header";
+import Catogries from "./Components/Categories";
+import Information from "./Components/Information";
+import ContactUs from "./Components/Contact";
+import Brands from "./Components/Brands";
+import Cart from "./Components/Cart";
+import Footer from "./Components/Footer";
+import Shop from "./Components/Shop";
 
 export default function App() {
   const [cartProducts, setCartProducts] = useState([]);
@@ -62,6 +44,7 @@ export default function App() {
       {page === "home" && <Home />}
       {page === "contact" && <ContactUs setPage={setPage} />}
       {page === "shop" && <Shop onAddToCart={handlAddProductToCart} />}
+      {page === "user" && <Home />}
       {page !== "contact" && <Footer />}
     </>
   );
@@ -76,16 +59,3 @@ function Home() {
     </>
   );
 }
-
-// function User() {
-//   <div className="sec-user">
-//     <div className="user-form">
-//       <h2>Create an account</h2>
-//       <p>Let's get started with 20% off</p>
-//       <input type="text" placeholder="Name" />
-//       <input type="email" placeholder="Email" />
-//       <input type="password" placeholder="Password" />
-//       <
-//     </div>
-//   </div>;
-// }

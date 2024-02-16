@@ -1,11 +1,5 @@
-import {
-  faCartPlus,
-  faChevronRight,
-  faFilter,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useRef, useState } from "react";
-// import Button from "./Button";
+
 import Filter from "./Filter";
 import SecProducts from "./Products";
 import ShowProduct from "./ShowProducts";
@@ -100,6 +94,8 @@ export default function Shop({ onAddToCart }) {
           product={openProduct}
           onCloseProduct={setIsOpenProduct}
           onAddToCart={onAddToCart}
+          products={products}
+          onOpenProduct={setIsOpenProduct}
         />
       ) : (
         <div className="shop">

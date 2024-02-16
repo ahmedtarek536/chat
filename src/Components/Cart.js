@@ -1,5 +1,4 @@
 import {
-  faArrowLeft,
   faArrowRight,
   faTrash,
   faXmark,
@@ -24,7 +23,7 @@ export default function Cart({
       </Button>
 
       {cartProducts.length === 0 ? (
-        <CartEmpty />
+        <CartEmpty onCloseCart={handleCloseCart} />
       ) : (
         <CartFull
           key={Date.now()}
@@ -135,7 +134,7 @@ function ProductCart({ product, setCartProducts }) {
   );
 }
 
-function CartEmpty() {
+function CartEmpty({ onCloseCart }) {
   return (
     <div className="cart-empty ">
       <img
@@ -143,7 +142,9 @@ function CartEmpty() {
         alt=" cart empty"
       />
       <h1>YOUR CART IS EMPTY</h1>
-      <Button fs={20}>Shop Now</Button>
+      <Button onClick={onCloseCart} fs={20}>
+        Shop Now
+      </Button>
     </div>
   );
 }
